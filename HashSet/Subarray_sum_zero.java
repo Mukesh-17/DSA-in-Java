@@ -21,6 +21,7 @@ public class Subarray_sum_zero {
                 len = i + 1;
             }
             if (hm.containsKey(sum)) {
+                //If we found another subarray (from hm.get(sum)+1 to i) with sum = 0, check if its length is greater than the previous longest, and keep the larger one.
                 len = Math.max(len, i - hm.get(sum));
             } else {
                 hm.put(sum, i);
